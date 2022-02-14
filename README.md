@@ -10,7 +10,7 @@ Para la realización de esta relación se debe usar la anotación @OneToOne prop
 
 ### Dependencias
 
-* Spring v2.5.6, Spring JPA, MySql driver, Java 8 (puede ser cualquier versión).
+* Spring v2.5.6, Spring JPA, MySQL driver, Java 8 (puede ser cualquier versión).
 * Cualquier Sistema Operativo
 
 ### Instalación
@@ -21,44 +21,60 @@ git clone https://github.com/Capdoo/spring-jpa-onetoone.git
 
 ```
 
-* Crear la Base de Datos usando MySql
+* Crear la Base de Datos usando MySQL
 ```
 CREATE DATABASE trabajadores CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 ```
 
 
-### Executing program
+### Editar las propiedades
 
-* How to run the program
-* Step-by-step bullets
-
-```
-aqui habia codigo
+* Es necesario modificar el archivo application.properties
+* Se debe indicar el nombre de usuario y contraseña de la Base de Datos
 
 ```
+spring.datasource.url=jdbc:mysql://localhost:3306/trabajadores
+spring.datasource.username=[Su username]
+spring.datasource.password=[Su contraseña]
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-## Help
+```
 
-Any advise for common problems or issues.
+## Ejecución
+
+Solo falta iniciar el proyecto a través de Spring Tools o Eclipse IDE 
 ```
-command to run if program contains helper info
+Click derecho en el proyecto
+Run As
+Spring Boot App
 ```
+
+## Anotaciones
+
+* One To One Annotation (@OneToOne)
+Identificamos el modelo origen y usamos la notación
+```
+@OneToOne(cascade = CascadeType.ALL)
+@JoinColumn(name = "direccion_id", referencedColumnName = "id_direccion", foreignKey = @ForeignKey(name = "USUARIO_FK_DIRECCION"))
+private DireccionModel direccion;
+```
+* Mapped By Parameter (mappedBy)
+Identificamos el modelo destino y usamos el parametro indicando el campo en el modelo origen
+```
+@OneToOne(cascade =  CascadeType.ALL,mappedBy = "direccion")
+private EmpleadoModel empleado;
+```
+
+## Relación
+![plot](./src/main/resources/static/relacion.png)
 
 ## Authors
 
-Contributors names and contact info
+Contribuidores y enlaces
 
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
+. [@Capdoo](https://github.com/Capdoo)
 
-## Version History
-
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
 
 ## License
 
@@ -66,9 +82,5 @@ This project is licensed under the [NAME HERE] License - see the LICENSE.md file
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+El fundamento de Spring JPA.
+* [awesome-readme](https://www.baeldung.com/jpa-one-to-one)
