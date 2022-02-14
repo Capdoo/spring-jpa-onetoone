@@ -1,29 +1,41 @@
-# Project Title
+# Spring JPA OneToOne
 
-Simple overview of use/purpose.
+Proyecto con implementación de la relacion One To One para dos tablas ("Empleados" y "Direcciones").
 
-## Description
+## Descripción
 
-An in-depth paragraph about your project and overview of use.
+Para la realización de esta relación se debe usar la anotación @OneToOne propia de Spring JPA.
 
-## Getting Started
+## Inicio
 
-### Dependencies
+### Dependencias
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* Spring v2.5.6, Spring JPA, MySql driver, Java 8 (puede ser cualquier versión).
+* Cualquier Sistema Operativo
 
-### Installing
+### Instalación
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Clonar el repositorio
+```
+git clone https://github.com/Capdoo/spring-jpa-onetoone.git
+
+```
+
+* Crear la Base de Datos usando MySql
+```
+CREATE DATABASE trabajadores CHARACTER SET utf8 COLLATE utf8_general_ci;
+
+```
+
 
 ### Executing program
 
 * How to run the program
 * Step-by-step bullets
+
 ```
-code blocks for commands
+aqui habia codigo
+
 ```
 
 ## Help
