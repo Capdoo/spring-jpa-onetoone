@@ -47,14 +47,14 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 Identificamos el modelo origen y usamos la notación
 ```
 @OneToOne(cascade = CascadeType.ALL)
-@JoinColumn(name = "direccion_id", referencedColumnName = "id_direccion", foreignKey = @ForeignKey(name = "USUARIO_FK_DIRECCION"))
-private DireccionModel direccion;
+@JoinColumn(name = "address_id", referencedColumnName = "id_address", foreignKey = @ForeignKey(name = "USER_FK_ADDRESS"))
+private AddressModel address;
 ```
 * Mapped By Parameter (mappedBy)
   Identificamos el modelo destino y usamos el parametro indicando el campo en el modelo origen
 ```
-@OneToOne(cascade =  CascadeType.ALL,mappedBy = "direccion")
-private EmpleadoModel empleado;
+@OneToOne(cascade =  CascadeType.ALL,mappedBy = "address")
+private EmployeeModel employee;
 ```
 
 ## Relación
