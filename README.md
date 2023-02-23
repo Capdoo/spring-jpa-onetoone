@@ -34,20 +34,11 @@ CREATE DATABASE trabajadores CHARACTER SET utf8 COLLATE utf8_general_ci;
 * Se debe indicar el nombre de usuario y contraseña de la Base de Datos
 
 ```
-spring.datasource.url=jdbc:mysql://localhost:3306/trabajadores
-spring.datasource.username=[Su username]
-spring.datasource.password=[Su contraseña]
+spring.datasource.url=jdbc:mysql://localhost:3306/onetotone
+spring.datasource.username=[username]
+spring.datasource.password=[password]
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
-```
-
-## Ejecución
-
-Solo falta iniciar el proyecto a través de Spring Tools o Eclipse IDE 
-```
-Click derecho en el proyecto
-Run As
-Spring Boot App
 ```
 
 ## Anotaciones
@@ -60,7 +51,7 @@ Identificamos el modelo origen y usamos la notación
 private DireccionModel direccion;
 ```
 * Mapped By Parameter (mappedBy)
-Identificamos el modelo destino y usamos el parametro indicando el campo en el modelo origen
+  Identificamos el modelo destino y usamos el parametro indicando el campo en el modelo origen
 ```
 @OneToOne(cascade =  CascadeType.ALL,mappedBy = "direccion")
 private EmpleadoModel empleado;
